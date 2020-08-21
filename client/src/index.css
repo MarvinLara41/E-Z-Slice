@@ -16,3 +16,34 @@ button {
 #root {
 	height: 100%;
 }
+
+.grid-container {
+	display: grid;
+	grid-template-areas: 'header' 'main' 'footer';
+	grid-template-columns: 1fr;
+	grid-template-rows: 4em 1fr 4em;
+	height: 100vh;
+}
+
+.home-header {
+	grid-area: header;
+	background-color: lightsalmon;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0.5rem;
+}
+
+.home-navBar li {
+	list-style: none;
+	display: inline;
+}
+
+/** Footer **/
+.footer {
+	grid-area: footer;
+	background-color: lightsalmon;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
