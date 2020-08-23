@@ -9,6 +9,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import PlaceOrder from './Screens/placeOrderScreen';
 import LandingScreen from './Screens/landingScreen';
 import MenuScreen from './Screens/menuScreen';
+import CartScreen from './Screens/cartScreen';
 
 function App() {
 	return (
@@ -27,6 +28,9 @@ function App() {
 							<li>
 								<Link to="/menu">Menu </Link>
 							</li>
+							<li>
+								<Link to="/cart">Cart </Link>
+							</li>
 						</ul>
 					</navbar>
 				</header>
@@ -35,6 +39,7 @@ function App() {
 						<Route path="/placeorder" component={PlaceOrder} />
 						<Route path="/" exact={true} component={LandingScreen} />
 						<Route path="/menu" component={MenuScreen} />
+						<Route path="/cart/:id?" component={CartScreen} />
 					</div>
 				</main>
 
