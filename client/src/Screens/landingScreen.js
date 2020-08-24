@@ -71,10 +71,13 @@ function LandingScreen(props) {
 					<li>
 						<div>Drinks </div>
 					</li>
-					<button>
-						<Link to="/menu">Order Now</Link>
-					</button>
 				</ul>
+			</div>
+
+			<div className="landing-order-button">
+				<button>
+					<Link to="/menu">Order Now</Link>
+				</button>
 			</div>
 
 			<div className="landing-store-hours">
