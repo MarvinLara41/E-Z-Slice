@@ -20,6 +20,7 @@ function App() {
 						<FontAwesomeIcon icon={['fas', 'pizza']} size="3x" />{' '}
 						<Link to="/">E-Z-Slice Pizza</Link>
 					</h1>
+					<h4> Any time is pizza time. </h4>
 					<navbar className="home-navBar">
 						<ul>
 							<li>
