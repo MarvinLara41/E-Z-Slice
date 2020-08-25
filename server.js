@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4444;
 require('dotenv').config();
 
 /** Routes **/
-// const productRoute = require('./routes/viewProductsRoute');
+const productRoute = require('./routes/productRoute');
 const orderRoute = require('./routes/placeOrderRoute');
 
 const app = express();
@@ -35,7 +35,7 @@ mongoose
 
 // API
 
-// app.use('/api/', productRoute);
+app.use('/api/products', productRoute);
 
 app.use('/api/', orderRoute);
 

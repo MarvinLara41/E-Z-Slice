@@ -36,16 +36,24 @@ function LandingScreen(props) {
 				<div className="swiper-container" id="/projects">
 					<div className="swiper-wrapper">
 						<div className="swiper-slide">
-							<img src={Pizza} alt="pizza" />
+							<Link to="/pizza">
+								<img src={Pizza} alt="pizza" />
+							</Link>
 						</div>
 						<div className="swiper-slide">
-							<img src={Mozzarella} alt="mozzarella" />
+							<Link to="/wings">
+								<img src={Mozzarella} alt="mozzarella" />
+							</Link>
 						</div>
 						<div className="swiper-slide">
-							<img src={Brownie} alt="brownie" />
+							<Link to="/desserts">
+								<img src={Brownie} alt="brownie" />
+							</Link>
 						</div>
 						<div className="swiper-slide">
-							<img src={CheeseSteak} alt="cheesesteak" />
+							<Link to="/sandwiches">
+								<img src={CheeseSteak} alt="cheesesteak" />
+							</Link>
 						</div>
 						{SwiperCore.use([Autoplay, Navigation, Pagination])}
 					</div>
@@ -57,19 +65,24 @@ function LandingScreen(props) {
 			<div className="landing-deals">
 				<ul>
 					<li>
-						<div>Pizza</div>
+						<div>
+							<Link to="/pizza">Pizza</Link>
+						</div>
 					</li>
 					<li>
-						<div>Wings</div>
+						<div>
+							<Link to="/wings">Wings</Link>
+						</div>
 					</li>
 					<li>
-						<div> SandWiches </div>
+						<div>
+							<Link to="/sandwiches"> SandWiches</Link>{' '}
+						</div>
 					</li>
 					<li>
-						<div>Desserts </div>
-					</li>
-					<li>
-						<div>Drinks </div>
+						<div>
+							<Link to="/desserts">Desserts </Link>
+						</div>
 					</li>
 				</ul>
 			</div>

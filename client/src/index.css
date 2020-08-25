@@ -117,6 +117,10 @@ button {
 	align-items: center;
 }
 
+.swiper-slide img {
+	cursor: pointer;
+}
+
 .swiper-slide {
 	text-align: center;
 	font-size: 18px;
@@ -140,4 +144,21 @@ button {
 .swiper-slide img {
 	width: 600px;
 	height: 300px;
+}
+
+/** Product Screen **/
+.product-details {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.product-info li {
+	list-style: none;
+	margin: 1rem;
+}
+
+.product-action li {
+	list-style: none;
+	margin: 1rem;
 }

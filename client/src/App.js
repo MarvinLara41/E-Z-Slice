@@ -6,10 +6,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
 /** Screens */
-import PlaceOrder from './Screens/placeOrderScreen';
+
 import LandingScreen from './Screens/landingScreen';
 import MenuScreen from './Screens/menuScreen';
-import CartScreen from './Screens/cartScreen';
+import ProductScreen from './Screens/productScreen';
 
 function App() {
 	return (
@@ -37,10 +37,9 @@ function App() {
 				</header>
 				<main>
 					<div className="content">
-						<Route path="/placeorder" component={PlaceOrder} />
 						<Route path="/" exact={true} component={LandingScreen} />
 						<Route path="/menu" component={MenuScreen} />
-						<Route path="/cart/:id?" component={CartScreen} />
+						<Route path="/product/:id" component={ProductScreen} />
 					</div>
 				</main>
 
