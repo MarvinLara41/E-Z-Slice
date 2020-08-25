@@ -52,7 +52,7 @@ function ProductScreen(props) {
 							<li> {product.name}</li>
 							<li>Price: {product.price}</li>
 
-							{/* <li>
+							<li>
 								Qty:
 								<select
 									value={qty}
@@ -60,16 +60,17 @@ function ProductScreen(props) {
 										setQty(e.target.value);
 									}}
 								>
-									{[...Array(product.countInStock).keys()].map((x) => (
-										<option key={x + 1} value={x + 1}>
-											{x + 1}
-										</option>
-									))}
+									<option> 1 </option>
+									<option> 2 </option>
+									<option> 3 </option>
+									<option> 4 </option>
+									<option> 5 </option>
 								</select>
-							</li> */}
+							</li>
 							<li>
 								<button onClick={handleAddToCart} className="button">
 									Add to Cart
+									{console.log(setQty)}
 								</button>
 							</li>
 						</ul>

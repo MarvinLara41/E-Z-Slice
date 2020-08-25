@@ -10,6 +10,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import LandingScreen from './Screens/landingScreen';
 import MenuScreen from './Screens/menuScreen';
 import ProductScreen from './Screens/productScreen';
+import CartScreen from './Screens/cartScreen';
 
 function App() {
 	return (
@@ -40,6 +41,7 @@ function App() {
 						<Route path="/" exact={true} component={LandingScreen} />
 						<Route path="/menu" component={MenuScreen} />
 						<Route path="/product/:id" component={ProductScreen} />
+						<Route path="/cart/:id?" component={CartScreen} />
 					</div>
 				</main>
 
