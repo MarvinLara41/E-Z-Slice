@@ -41,12 +41,12 @@ const removeFromCart = (productId) => (dispatch, getState) => {
 	Cookie.set('cartItems', JSON.stringify(cartItems));
 };
 
-// const saveAddress = (data) => (dispatch) => {
-// 	dispatch({ type: CART_SAVE_SHIPPING, payload: data });
-// };
+const saveShipping = (data) => (dispatch) => {
+	dispatch({ type: CART_SAVE_SHIPPING, payload: data });
+};
 
 // const savePayment = (data) => (dispatch) => {
 // 	dispatch({ type: CART_SAVE_PAYMENT, payload: data });
 // };
 
-export { addToCart, removeFromCart };
+export { addToCart, removeFromCart, saveShipping };

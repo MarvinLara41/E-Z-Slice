@@ -11,6 +11,7 @@ import LandingScreen from './Screens/landingScreen';
 import MenuScreen from './Screens/menuScreen';
 import ProductScreen from './Screens/productScreen';
 import CartScreen from './Screens/cartScreen';
+import ShippingScreen from './Screens/shippingScreen';
 
 function App() {
 	return (
