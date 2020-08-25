@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 
 function CartScreen(props) {
 	//get access to cart
@@ -14,11 +14,19 @@ function CartScreen(props) {
 		? Number(props.location.search.split('='[1]))
 		: 1;
 
-	const disptach = useDispatch();
+	const dispatch = useDispatch();
+
+	const removeFromCartHandler = (productId) => {
+		dispatch(removeFromCart(productId));
+	};
+
+	const checkoutHandler = () => {
+		props.history.push('/shipping');
+	};
 
 	useEffect(() => {
 		if (productId) {
-			disptach(addToCart(productId, qty));
+			dispatch(addToCart(productId, qty));
 		}
 	}, []);
 
@@ -39,16 +47,27 @@ function CartScreen(props) {
 
 								<div>
 									Qty:
-									<select>
-										<option value="1"> 1 </option>
-										<option value="2"> 2 </option>
-										<option value="3"> 3 </option>
-										<option value="4"> 4 </option>
-										<option value="5"> 5 </option>
+									<select
+										value={item.qty}
+										onChange={(e) =>
+											dispatch(addToCart(item.product, e.target.value))
+										}
+									>
+										{[...Array(item.quanity).keys()].map((x) => (
+											<option key={x + 1} value={x + 1}>
+												{x + 1}
+											</option>
+										))}
 									</select>
+									<button
+										type="button"
+										onClick={() => removeFromCartHandler(item.product)}
+									>
+										Delete
+									</button>
 								</div>
 
-								<div>{item.price}</div>
+								<div>${item.price} each</div>
 							</div>
 						))
 					)}
@@ -61,7 +80,11 @@ function CartScreen(props) {
 					SubTotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
 					{cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
 				</h3>
-				<button className="cart-button" disabled={cartItems.length === 0}>
+				<button
+					onClick={checkoutHandler}
+					className="cart-button"
+					disabled={cartItems.length === 0}
+				>
 					Proceed To Checkout
 				</button>
 			</div>

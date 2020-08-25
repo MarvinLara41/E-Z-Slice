@@ -60,17 +60,16 @@ function ProductScreen(props) {
 										setQty(e.target.value);
 									}}
 								>
-									<option> 1 </option>
-									<option> 2 </option>
-									<option> 3 </option>
-									<option> 4 </option>
-									<option> 5 </option>
+									{[...Array(product.quanity).keys()].map((x) => (
+										<option key={x + 1} value={x + 1}>
+											{x + 1}
+										</option>
+									))}
 								</select>
 							</li>
 							<li>
 								<button onClick={handleAddToCart} className="button">
-									Add to Cart
-									{console.log(setQty)}
+									Add To Cart
 								</button>
 							</li>
 						</ul>

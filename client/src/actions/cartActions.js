@@ -19,6 +19,7 @@ const addToCart = (productId, qty) => async (dispatch, getState) => {
 				name: data.name,
 				// image: data.image,
 				price: data.price,
+				quanity: data.quanity,
 				qty,
 			},
 		});
@@ -31,14 +32,14 @@ const addToCart = (productId, qty) => async (dispatch, getState) => {
 	} catch (error) {}
 };
 
-// const removeFromCart = (productId) => (dispatch, getState) => {
-// 	dispatch((type: CART_REMOVE_ITEM), (payload: productId));
+const removeFromCart = (productId) => (dispatch, getState) => {
+	dispatch({ type: CART_REMOVE_ITEM, payload: productId });
 
-// 	const {
-// 		cart: { cartItems },
-// 	} = getState();
-// 	Cookie.set('cartItems', JSON, stringify(cartItems));
-// };
+	const {
+		cart: { cartItems },
+	} = getState();
+	Cookie.set('cartItems', JSON.stringify(cartItems));
+};
 
 // const saveAddress = (data) => (dispatch) => {
 // 	dispatch({ type: CART_SAVE_SHIPPING, payload: data });
@@ -48,4 +49,4 @@ const addToCart = (productId, qty) => async (dispatch, getState) => {
 // 	dispatch({ type: CART_SAVE_PAYMENT, payload: data });
 // };
 
-export { addToCart };
+export { addToCart, removeFromCart };
