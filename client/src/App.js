@@ -12,6 +12,8 @@ import MenuScreen from './Screens/menuScreen';
 import ProductScreen from './Screens/productScreen';
 import CartScreen from './Screens/cartScreen';
 import ShippingScreen from './Screens/shippingScreen';
+import PaymentScreen from './Screens/paymentScreen';
+import PlaceOrderScreen from './Screens/placeOrderScreen';
 
 function App() {
 	return (
@@ -43,6 +45,9 @@ function App() {
 						<Route path="/menu" component={MenuScreen} />
 						<Route path="/product/:id" component={ProductScreen} />
 						<Route path="/cart/:id?" component={CartScreen} />
+						<Route path="/shipping" component={ShippingScreen} />
+						<Route path="/payment" component={PaymentScreen} />
+						<Route path="/placeorder" component={PlaceOrderScreen} />
 					</div>
 				</main>
 

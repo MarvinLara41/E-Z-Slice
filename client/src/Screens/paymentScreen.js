@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { savePayment } from '../actions/cartAction';
+import { savePayment } from '../actions/cartActions';
+import CheckOutSteps from '../components/checkOutSteps';
 
 function PaymentScreen(props) {
 	const [paymentMethod, setPaymentMethod] = useState('');
@@ -17,7 +18,7 @@ function PaymentScreen(props) {
 
 	return (
 		<div>
-			{/* <CheckOutSteps step1 step2 step3></CheckOutSteps> */}
+			<CheckOutSteps step1 step2></CheckOutSteps>
 			<div className="form">
 				<form onSubmit={submitHandler}>
 					<ul className="form-container">
@@ -25,15 +26,17 @@ function PaymentScreen(props) {
 							<h3>Payment</h3>
 						</li>
 						<li>
-							<input
-								type="radio"
-								name="paymentMethod"
-								id="paymentMethod"
-								onChange={(e) => setPaymentMethod(e.target.value)}
-								placeholder="Address"
-								value="paypal"
-							></input>
-							<label htmlFor="paymentMethod">Pay-Pal</label>
+							<div className="payment-option">
+								<input
+									type="radio"
+									name="paymentMethod"
+									id="paymentMethod"
+									onChange={(e) => setPaymentMethod(e.target.value)}
+									value="paypal"
+								></input>
+
+								<label htmlFor="paymentMethod">Pay-Pal</label>
+							</div>
 						</li>
 						<li>
 							<button type="submit" className="button primary ">

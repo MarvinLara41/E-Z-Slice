@@ -45,8 +45,8 @@ const saveShipping = (data) => (dispatch) => {
 	dispatch({ type: CART_SAVE_SHIPPING, payload: data });
 };
 
-// const savePayment = (data) => (dispatch) => {
-// 	dispatch({ type: CART_SAVE_PAYMENT, payload: data });
-// };
+const savePayment = (data) => (dispatch) => {
+	dispatch({ type: CART_SAVE_PAYMENT, payload: data });
+};
 
-export { addToCart, removeFromCart, saveShipping };
+export { addToCart, removeFromCart, saveShipping, savePayment };

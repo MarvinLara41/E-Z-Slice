@@ -1,23 +1,26 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import CheckoutSteps from '../components/CheckOutSteps';
+import CheckoutSteps from '../components/checkOutSteps';
 import { createOrder } from '../actions/orderActions';
+
 function PlaceOrderScreen(props) {
 	const cart = useSelector((state) => state.cart);
 	const orderCreate = useSelector((state) => state.orderCreate);
-	const { success, order } = orderCreate;
+	const { loading, success, error, order } = orderCreate;
 
 	const { cartItems, shipping, payment } = cart;
+
 	if (!shipping.address) {
 		props.history.push('/shipping');
 	} else if (!payment.paymentMethod) {
 		props.history.push('/payment');
 	}
+
 	const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
-	const shippingPrice = itemsPrice > 100 ? 0 : 10;
+	const deliveryPrice = itemsPrice > 100 ? 0 : 3;
 	const taxPrice = 0.15 * itemsPrice;
-	const totalPrice = itemsPrice + shippingPrice + taxPrice;
+	const totalPrice = itemsPrice + deliveryPrice + taxPrice;
 
 	const dispatch = useDispatch();
 
@@ -30,7 +33,7 @@ function PlaceOrderScreen(props) {
 				shipping,
 				payment,
 				itemsPrice,
-				shippingPrice,
+				deliveryPrice,
 				taxPrice,
 				totalPrice,
 			})
@@ -45,8 +48,8 @@ function PlaceOrderScreen(props) {
 
 	return (
 		<div>
-			{/* <CheckoutSteps step1 step2 step3 step4></CheckoutSteps> */}
 			<div className="placeorder">
+				<CheckoutSteps step1 step2 step3 step4></CheckoutSteps>{' '}
 				<div className="placeorder-info">
 					<div>
 						<h3>Shipping</h3>
@@ -71,9 +74,9 @@ function PlaceOrderScreen(props) {
 							) : (
 								cartItems.map((item) => (
 									<li>
-										<div className="cart-image">
+										{/* <div className="cart-image">
 											<img src={item.image} alt="product" />
-										</div>
+										</div> */}
 										<div className="cart-name">
 											<div>
 												<Link to={'/product/' + item.product}>{item.name}</Link>
@@ -105,8 +108,8 @@ function PlaceOrderScreen(props) {
 							<div>${itemsPrice}</div>
 						</li>
 						<li>
-							<div>Shipping</div>
-							<div>${shippingPrice}</div>
+							<div>Delivery </div>
+							<div>${deliveryPrice}</div>
 						</li>
 						<li>
 							<div>Tax</div>

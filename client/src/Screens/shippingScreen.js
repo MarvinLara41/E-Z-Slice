@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { saveShipping } from '../actions/cartActions';
+import CheckOutSteps from '../components/checkOutSteps';
 
 function ShippingScreen(props) {
 	const [address, setAddress] = useState('');
@@ -21,6 +22,9 @@ function ShippingScreen(props) {
 
 	return (
 		<div className="shipping-container">
+			<div>
+				<CheckOutSteps step1></CheckOutSteps>
+			</div>
 			<form onSubmit={submitHandler}>
 				<ul className="form-container">
 					<li>

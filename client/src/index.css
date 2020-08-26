@@ -162,3 +162,23 @@ button {
 	list-style: none;
 	margin: 1rem;
 }
+
+/** CheckOutSteps **/
+.checkout-steps {
+	display: flex;
+	justify-content: space-between;
+	width: 30rem;
+	margin: 1rem auto;
+}
+
+.checkout-steps > div {
+	border-top: 0.3rem #c0c0c0 solid;
+	color: #c0c0c0;
+	flex: 1 1;
+	padding-top: 1rem;
+}
+
+.checkout-steps > div.active {
+	border-top: 0.3rem #f08000 solid;
+	color: #f08000;
+}
