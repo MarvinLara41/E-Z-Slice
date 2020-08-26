@@ -158,11 +158,20 @@ button {
 .product-info li {
 	list-style: none;
 	margin: 1rem;
+	font-size: 25px;
 }
 
 .product-action li {
 	list-style: none;
 	margin: 1rem;
+}
+
+.details-action li {
+	list-style: none;
+}
+
+.details-action button {
+	border-radius: 5rem;
 }
 
 /** CheckOutSteps **/
@@ -201,6 +210,8 @@ button {
 	border-radius: 5rem;
 	margin: 1rem auto;
 }
+
+/** Menu Screen **/
 
 .product-category {
 	display: flex;
