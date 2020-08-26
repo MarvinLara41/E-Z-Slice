@@ -182,3 +182,7 @@ button {
 	border-top: 0.3rem #f08000 solid;
 	color: #f08000;
 }
+
+.placeorder-action-payment > div {
+	width: 100%;
+}

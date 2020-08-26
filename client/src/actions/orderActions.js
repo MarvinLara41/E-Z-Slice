@@ -26,7 +26,7 @@ const createOrder = (order) => async (dispatch) => {
 
 		const {
 			data: { data: newOrder },
-		} = await axios.post('/api/placeorder', order);
+		} = await axios.post('/api/', order);
 
 		dispatch({ type: ORDER_CREATE_SUCCESS, payload: newOrder });
 	} catch (error) {
@@ -34,4 +34,30 @@ const createOrder = (order) => async (dispatch) => {
 	}
 };
 
-export { createOrder };
+const detailsOrder = (orderId) => async (dispatch) => {
+	try {
+		dispatch({ type: ORDER_DETAILS_REQUEST, payload: orderId });
+
+		const { data } = await axios.get('/api/' + orderId);
+
+		dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data });
+	} catch (error) {
+		dispatch({ type: ORDER_DETAILS_FAIL, payload: error.message });
+	}
+};
+
+const payOrder = (order, paymentResult) => async (dispatch) => {
+	try {
+		dispatch({ type: ORDER_PAY_REQUEST, payload: paymentResult });
+
+		const { data } = await axios.put(
+			'/api/' + order._id + '/pay',
+			paymentResult
+		);
+		dispatch({ type: ORDER_PAY_SUCCESS, payload: data });
+	} catch (error) {
+		dispatch({ type: ORDER_PAY_FAIL, payload: error.message });
+	}
+};
+
+export { createOrder, payOrder, detailsOrder };

@@ -29,6 +29,8 @@ const reducer = combineReducers({
 	productList: productListReducer,
 	productDetails: productDetailsReducer,
 	orderCreate: orderCreateReducer,
+	orderDetails: orderDetailsReducer,
+	orderPay: orderPayReducer,
 });
 
 const composeEnchancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
