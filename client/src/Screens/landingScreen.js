@@ -3,10 +3,21 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Swiper from 'swiper';
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faPizzaSlice,
+	faDrumstickBite,
+	faHamburger,
+	faIceCream,
+} from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import Pizza from '../Images/pizza.jpg';
-import Brownie from '../Images/brownie.jpg';
 import CheeseSteak from '../Images/cheesesteak.jpg';
-import Mozzarella from '../Images/mozzarella.jpg';
+import Wings from '../Images/wings.jpg';
+import BLT from '../Images/BLT.jpg';
+
+library.add(fab);
 
 function LandingScreen(props) {
 	useEffect(() => {
@@ -36,22 +47,22 @@ function LandingScreen(props) {
 				<div className="swiper-container" id="/projects">
 					<div className="swiper-wrapper">
 						<div className="swiper-slide">
-							<Link to="/pizza">
+							<Link to="/menu">
 								<img src={Pizza} alt="pizza" />
 							</Link>
 						</div>
 						<div className="swiper-slide">
-							<Link to="/wings">
-								<img src={Mozzarella} alt="mozzarella" />
+							<Link to="/menu">
+								<img src={Wings} alt="mozzarella" />
 							</Link>
 						</div>
 						<div className="swiper-slide">
-							<Link to="/desserts">
-								<img src={Brownie} alt="brownie" />
+							<Link to="/menu">
+								<img src={BLT} alt="brownie" />
 							</Link>
 						</div>
 						<div className="swiper-slide">
-							<Link to="/sandwiches">
+							<Link to="/menu">
 								<img src={CheeseSteak} alt="cheesesteak" />
 							</Link>
 						</div>
@@ -66,22 +77,30 @@ function LandingScreen(props) {
 				<ul>
 					<li>
 						<div>
-							<Link to="/pizza">Pizza</Link>
+							<Link to="/menu">
+								<FontAwesomeIcon icon={faPizzaSlice} size="3x" />
+							</Link>
 						</div>
 					</li>
 					<li>
 						<div>
-							<Link to="/wings">Wings</Link>
+							<Link to="/menu">
+								<FontAwesomeIcon icon={faDrumstickBite} size="3x" />
+							</Link>
 						</div>
 					</li>
 					<li>
 						<div>
-							<Link to="/sandwiches"> SandWiches</Link>{' '}
+							<Link to="/menu">
+								<FontAwesomeIcon icon={faHamburger} size="3x" />
+							</Link>{' '}
 						</div>
 					</li>
 					<li>
 						<div>
-							<Link to="/desserts">Desserts </Link>
+							<Link to="/menu">
+								<FontAwesomeIcon icon={faIceCream} size="3x" />
+							</Link>
 						</div>
 					</li>
 				</ul>

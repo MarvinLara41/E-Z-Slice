@@ -29,7 +29,7 @@ function App() {
 					<navbar className="home-navBar">
 						<ul>
 							<li>
-								<Link to="/placeorder"> Order Now</Link>
+								<Link to="/menu"> Order Now</Link>
 							</li>
 							<li>
 								<Link to="/menu">Menu </Link>

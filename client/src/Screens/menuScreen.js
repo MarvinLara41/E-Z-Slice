@@ -21,20 +21,22 @@ function MenuScreen(props) {
 			) : error ? (
 				<div> {error} </div>
 			) : (
-				<ul className="menu-products">
-					{products.map((product) => (
-						<li key={product._id}>
-							<div className="product-category">
-								<h1> {product.category}</h1>
-							</div>
-							<div className="product-name">
-								<Link to={'/product/' + product._id}>{product.name}</Link>
-							</div>
-							<div className="product-brand">{product.description}</div>
-							<div className="product-price">${product.price}</div>
-						</li>
-					))}
-				</ul>
+				<div className="menu-products">
+					<ul>
+						{products.map((product) => (
+							<li key={product._id}>
+								<div className="product-category">
+									<h1> {product.category}</h1>
+								</div>
+								<div className="product-name">
+									<Link to={'/product/' + product._id}>{product.name}</Link>
+								</div>
+								<div className="product-brand">{product.description}</div>
+								<div className="product-price">${product.price}</div>
+							</li>
+						))}
+					</ul>
+				</div>
 			)}
 		</div>
 	);

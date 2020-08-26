@@ -7,6 +7,7 @@ body {
 	font: 1.6rem Helvetica;
 	height: 100vh;
 	margin: 0;
+	font-family: 'Concert One', cursive;
 }
 
 button {
@@ -27,7 +28,7 @@ button {
 
 .home-header {
 	grid-area: header;
-	background-color: lightsalmon;
+	background-color: #afeeee;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -43,12 +44,13 @@ button {
 .home-navBar li {
 	list-style: none;
 	display: inline;
+	font-size: 20px;
 }
 
 /** Footer **/
 .footer {
 	grid-area: footer;
-	background-color: lightsalmon;
+	background-color: #afeeee;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -185,4 +187,41 @@ button {
 
 .placeorder-action-payment > div {
 	width: 100%;
+}
+
+.menu-products {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.menu-products li {
+	list-style: none;
+	border-style: solid;
+	border-radius: 5rem;
+	margin: 1rem auto;
+}
+
+.product-category {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-brand {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.product-price {
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
