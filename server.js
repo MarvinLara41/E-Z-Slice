@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const config = require('./config');
 const PORT = process.env.PORT || 4444;
 require('dotenv').config();
@@ -34,6 +35,8 @@ mongoose
 	.catch((error) => console.log(error.reason));
 
 // API
+
+app.use(cors());
 
 app.use('/api/products', productRoute);
 
