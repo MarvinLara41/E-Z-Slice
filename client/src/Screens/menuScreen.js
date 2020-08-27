@@ -23,6 +23,7 @@ function MenuScreen(props) {
 			) : (
 				<div className="menu-products">
 					<ul>
+						<h2> Menu </h2>
 						{products.map((product) => (
 							<li key={product._id}>
 								<div className="product-category">

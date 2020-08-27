@@ -202,6 +202,7 @@ button {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	border-style: solid;
 }
 
 .menu-products li {
@@ -209,6 +210,12 @@ button {
 	border-style: solid;
 	border-radius: 5rem;
 	margin: 1rem auto;
+}
+
+.menu-products > ul > h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /** Menu Screen **/
@@ -235,4 +242,31 @@ button {
 	display: flex;
 	justify-content: center;
 	align-content: center;
+}
+
+.product-info {
+	border-style: solid;
+	border-radius: 5rem;
+}
+
+.details-action {
+	border-style: solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2rem;
+}
+
+.details-action ul {
+	padding: 1rem;
+}
+
+.details-action li button {
+	width: 100%;
+	cursor: pointer;
+}
+
+.details-action li button:hover {
+	font-weight: bolder;
+	border-width: 0.4rem;
 }
