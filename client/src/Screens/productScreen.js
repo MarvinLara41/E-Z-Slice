@@ -45,28 +45,6 @@ function ProductScreen(props) {
 								Description:
 								{product.description}
 							</li>
-						</ul>
-					</div>
-					<div className="details-action">
-						<ul>
-							<li> {product.name}</li>
-							<li>Price: {product.price}</li>
-
-							<li>
-								Qty:
-								<select
-									value={qty}
-									onChange={(e) => {
-										setQty(e.target.value);
-									}}
-								>
-									{[...Array(product.quanity).keys()].map((x) => (
-										<option key={x + 1} value={x + 1}>
-											{x + 1}
-										</option>
-									))}
-								</select>
-							</li>
 							<li>
 								<button onClick={handleAddToCart} className="button">
 									Add To Cart

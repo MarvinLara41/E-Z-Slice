@@ -228,7 +228,7 @@ button:hover {
 	align-items: center;
 }
 
-/** Menu Screen **/
+/** Product Screen **/
 
 .product-category {
 	display: flex;
@@ -257,6 +257,12 @@ button:hover {
 .product-info {
 	border-style: solid;
 	border-radius: 5rem;
+}
+
+.product-info li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .details-action {
@@ -351,4 +357,20 @@ button:hover {
 .placeorder-button:hover {
 	border-width: 0.4rem;
 	border-color: #f08000;
+}
+
+/** Details Order Screen **/
+.placeorder {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.cart-list-container li {
+	list-style: none;
+}
+
+.placeorder-action-payment li {
+	list-style: none;
+	margin: 1rem auto;
 }

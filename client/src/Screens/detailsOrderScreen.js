@@ -56,7 +56,6 @@ function DetailsOrderScreen(props) {
 						<ul className="cart-list-container">
 							<li>
 								<h3>Shopping Cart</h3>
-								<div>Price</div>
 							</li>
 							{order.orderItems.length === 0 ? (
 								<div>Cart is empty</div>
@@ -72,7 +71,9 @@ function DetailsOrderScreen(props) {
 											</div>
 											<div>Qty: {item.qty}</div>
 										</div>
-										<div className="cart-price">${item.price}</div>
+										<div className="cart-price">
+											Price per item: ${item.price}
+										</div>
 									</li>
 								))
 							)}
@@ -81,6 +82,29 @@ function DetailsOrderScreen(props) {
 				</div>
 				<div className="placeorder-action-payment">
 					<ul>
+						<li>
+							<h3>Order Summary</h3>
+						</li>
+						<li>
+							<div>Items Cost before tax</div>
+							<div>${order.itemsPrice}</div>
+						</li>
+						<li>
+							<div>Delivery Fee</div>
+							{order.shippingPrice == null || 0 ? (
+								<div> Delivery Fee Wavied </div>
+							) : (
+								<div>${order.shippingPrice}</div>
+							)}
+						</li>
+						<li>
+							<div>Taxes</div>
+							<div>${order.taxPrice}</div>
+						</li>
+						<li>
+							<div>Order Total</div>
+							<div>${order.totalPrice}</div>
+						</li>
 						<li className="placeorder-action-payment">
 							{loadingPay && <div>Finishing Payment...</div>}
 							{!order.isPaid && (
@@ -89,25 +113,6 @@ function DetailsOrderScreen(props) {
 									onSuccess={handleSuccessPayment}
 								/>
 							)}
-						</li>
-						<li>
-							<h3>Order Summary</h3>
-						</li>
-						<li>
-							<div>Items</div>
-							<div>${order.itemsPrice}</div>
-						</li>
-						<li>
-							<div>Shipping</div>
-							<div>${order.shippingPrice}</div>
-						</li>
-						<li>
-							<div>Tax</div>
-							<div>${order.taxPrice}</div>
-						</li>
-						<li>
-							<div>Order Total</div>
-							<div>${order.totalPrice}</div>
 						</li>
 					</ul>
 				</div>
