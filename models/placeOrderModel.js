@@ -4,6 +4,7 @@ const shippingSchema = {
 	address: { type: String, required: true },
 	city: { type: String, required: true },
 	postalCode: { type: String, required: true },
+	state: { type: String, required: true },
 	country: { type: String, required: true },
 };
 
@@ -14,7 +15,7 @@ const paymentSchema = {
 const orderItemSchema = new mongoose.Schema({
 	name: { type: String, required: true },
 	qty: { type: Number, required: true },
-	image: { type: String, required: true },
+	// image: { type: String, required: true },
 	price: { type: String, required: true },
 	product: {
 		type: mongoose.Schema.Types.ObjectId,
@@ -23,19 +24,13 @@ const orderItemSchema = new mongoose.Schema({
 	},
 });
 
-const pizzaOptionsSchema = new mongoose.Schema({
-	size: { type: String, required: true },
-	toppings: { type: String, required: true },
-	crust: { type: String, required: true },
-});
-
 const orderSchema = new mongoose.Schema(
 	{
 		orderItems: [orderItemSchema],
-		pizzaOptions: pizzaOptionsSchema,
 		shipping: shippingSchema,
 		payment: paymentSchema,
 		itemsPrice: { type: Number },
+		shippingPrice: { type: Number },
 		taxPrice: { type: Number },
 		totalPrice: { type: Number },
 		isPaid: { type: Boolean, default: false },
