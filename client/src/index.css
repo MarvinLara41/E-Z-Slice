@@ -97,9 +97,6 @@ button:hover {
 .landing-order-button button {
 	width: 30rem;
 	border-radius: 5rem;
-	border-style: groove;
-	border-width: 1rem;
-	border-color: lightsalmon;
 	font-size: 3rem;
 }
 
