@@ -22,7 +22,6 @@ function App() {
 			<div className="grid-container">
 				<header className="home-header">
 					<h1>
-						<FontAwesomeIcon icon={['fas', 'pizza']} size="3x" />{' '}
 						<Link to="/">E-Z-Slice Pizza</Link>
 					</h1>
 					<h4> Any time is pizza time. </h4>

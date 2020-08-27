@@ -12,6 +12,12 @@ body {
 
 button {
 	font-size: 1.6rem;
+	border-radius: 5rem;
+	font-family: 'Concert One', cursive;
+}
+
+button:hover {
+	font-weight: bolder;
 }
 
 #root {
@@ -45,6 +51,10 @@ button {
 	list-style: none;
 	display: inline;
 	font-size: 20px;
+}
+
+.home-navBar li:hover {
+	font-weight: bolder;
 }
 
 /** Footer **/
@@ -269,4 +279,76 @@ button {
 .details-action li button:hover {
 	font-weight: bolder;
 	border-width: 0.4rem;
+}
+
+/** Cart Screen **/
+
+.cart-list {
+	margin-top: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart-action {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart-list li {
+	list-style: none;
+}
+
+/** Shipping Screen **/
+
+.shipping-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.shipping-form li {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.shipping-form li h3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/** Payment Screen **/
+
+.payment-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.payment-form li {
+	list-style: none;
+}
+
+/** PlaceOrderScreen **/
+.placeorder-data {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.placeorder-data li {
+	list-style: none;
+}
+
+.placeorder-button {
+	width: 100%;
+	border-style: solid;
+}
+
+.placeorder-button:hover {
+	border-width: 0.4rem;
+	border-color: #f08000;
 }

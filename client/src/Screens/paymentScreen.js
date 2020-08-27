@@ -19,11 +19,11 @@ function PaymentScreen(props) {
 	return (
 		<div>
 			<CheckOutSteps step1 step2></CheckOutSteps>
-			<div className="form">
+			<div className="payment-form">
 				<form onSubmit={submitHandler}>
 					<ul className="form-container">
 						<li>
-							<h3>Payment</h3>
+							<h2>Payment</h2>
 						</li>
 						<li>
 							<div className="payment-option">
